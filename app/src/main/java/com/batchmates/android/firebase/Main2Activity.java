@@ -68,8 +68,9 @@ public class Main2Activity extends AppCompatActivity implements GoogleApiClient.
         //FACEBOOOK
 
         mCallbackManager = CallbackManager.Factory.create();
+        Log.d(TAG, "onCreate: FaceBook");
         LoginButton loginButton = (LoginButton) findViewById(R.id.button_facebook_login);
-//        loginButton.setReadPermissions("email", "public_profile");
+        loginButton.setReadPermissions("email", "public_profile");
         loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -85,6 +86,7 @@ public class Main2Activity extends AppCompatActivity implements GoogleApiClient.
 
             @Override
             public void onError(FacebookException error) {
+                Log.d(TAG, "onError: FaceBook ");
 
             }
         });
