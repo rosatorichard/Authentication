@@ -48,6 +48,7 @@ public class Main2Activity extends AppCompatActivity implements GoogleApiClient.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        Toast.makeText(this, getIntent().getStringExtra("data"), Toast.LENGTH_LONG).show();
 
         findViewById(R.id.sign_in_button).setOnClickListener(this);
 // ...
